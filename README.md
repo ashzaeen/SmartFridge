@@ -1,7 +1,9 @@
 
 SmartFridge — AI-Powered Nutrition & Pantry Assistant
+
 A native Android application bridging household inventory with personalized health tracking, 
 powered by Spoonacular and OpenAI.
+
 TEAM CONTACT INFORMATION
 MEMBER CONTACT
 Mushtahir Kabir
