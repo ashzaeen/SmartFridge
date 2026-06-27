@@ -32,7 +32,7 @@ Platform: Android (API 26+)
 Recommended: Pixel 8 emulator, API 35
 
 INSTALLATION
-1. Locate SmartFridge.apk 
+1. [Locate SmartFridge.apk ](https://drive.google.com/file/d/1-8ZCAQs9sJSOqfDzEVNL2eCMMBxVEh9f/view?usp=sharing)
 2. Install via Android Studio Device Manager or run: install SmartFridge.apk
 3. Launch the SmartFridge app.
 
