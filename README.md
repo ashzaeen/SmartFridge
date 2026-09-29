@@ -7,25 +7,22 @@ powered by Spoonacular and OpenAI.
 TEAM CONTACT INFORMATION
 MEMBER CONTACT
 
+Shrayosi Sarker Hridika
+Developer
+Email: ssh9831@mavs.uta.edu
+
 Mushtahir Kabir
 Developer
 Email: mxk7416@mavs.uta.edu
-Phone: (682) 323-6552
 
 Farhan Ishraq Khan
 Developer· Primary Contact
 Email: fxi3751@mavs.uta.edu
-Phone: (682) 241-7524
 
-Shrayosi Sarker Hridika
-Developer
-Email: ssh9831@mavs.uta.edu
-Phone: (210) 865-8581
 
 Ashzaeen Fatmi Khan
 Developer
 Email: afk6801@mavs.uta.edu
-Phone: (682) 367-8950
 
 APPLICATION ACCESS
 Platform: Android (API 26+)
