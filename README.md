@@ -14,7 +14,7 @@ For anyone who wants to cook from what is already in the fridge while keeping an
 - **Order what is missing** - jump from a recipe to Uber Eats, DoorDash, Instacart or Amazon Fresh with the shopping list.
 - **Fitness and water tracking** - daily calories, macros and water against personal goals.
 - **AI nutrition chatbot** - answers using your profile (goals, allergies, diet) as context.
-- **Reminders** - a daily 8:00 PM nudge via WorkManager.
+- **Reminders** - daily notifications via WorkManager: breakfast (8:00), lunch (12:00), dinner (18:00) and an evening goal check (22:00).
 - **Accounts** - sign up and log in with Firebase Authentication; data stored in Firestore.
 
 ## Tech stack
@@ -56,7 +56,7 @@ You need Android Studio (recent stable) and your own API keys. No secrets are st
 
 - Internet is required for login and registration, recipe search, Recipe Match, Swap It and the chatbot. Saved recipes, the pantry list, fitness and water tracking work offline.
 - The Spoonacular free tier allows about 150 points per day; if results stop loading, that is the likely cause.
-- The 8:00 PM reminder registers after the app has been opened once.
+- The reminders are scheduled when you sign in or register, so they start after the first sign-in.
 - Camera scanning needs a physical camera; on an emulator the simulated camera image is used.
 
 ## Project layout
