@@ -71,6 +71,10 @@ app/src/main/java/com/team8/smartfridge/
   utils/       Notification worker, recipe match store
 ```
 
+## License
+
+[MIT](LICENSE), copyright the SmartFridge authors.
+
 ## Team
 
 Team 8: Shrayosi Sarker Hridika, Mushtahir Kabir, Farhan Ishraq Khan and Ashzaeen Fatmi Khan.
