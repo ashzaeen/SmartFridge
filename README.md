@@ -2,7 +2,7 @@
 
 **An AI-powered nutrition and pantry assistant for Android.** Track what is in your fridge, get recipes built from what you already have, log fitness and water, and ask an AI nutrition chatbot anything in between.
 
-Built as a four-person team project (Team 8) in Kotlin and Jetpack Compose.
+For anyone who wants to cook from what is already in the fridge while keeping an eye on nutrition. Built as a four-person team project (Team 8) in Kotlin and Jetpack Compose.
 
 > Platform: Android 8.0+ (API 26) · Recommended test device: Pixel 8 emulator, API 35
 
@@ -23,7 +23,7 @@ Kotlin · Jetpack Compose (Material 3) · Navigation Compose · Firebase Auth + 
 
 ## Setup
 
-You need Android Studio (recent stable), JDK 11+, and your own API keys. No secrets are stored in this repo.
+You need Android Studio (recent stable) and your own API keys. No secrets are stored in this repo. The build uses Gradle 9.3.1 (via the wrapper), Android Gradle Plugin 8.9.1, Kotlin 2.0.21 and compile SDK 36. Gradle runs on a JDK 21 toolchain that it downloads automatically on first sync; the app code itself targets Java 11.
 
 1. **Clone**
    ```bash
@@ -38,14 +38,19 @@ You need Android Studio (recent stable), JDK 11+, and your own API keys. No secr
    SPOONACULAR_API_KEY=your_spoonacular_key
    OPENAI_API_KEY=your_openai_key
    ```
-   Keys are read at build time into `BuildConfig` (see `app/build.gradle.kts`).
-3. **Add Firebase.** Create a Firebase project, register an Android app with the package name `com.team8.smartfridge`, enable **Email/Password** sign-in and **Firestore**, then download `google-services.json` into `app/`. It is git-ignored.
+   Get a Spoonacular key from the [Spoonacular Food API console](https://spoonacular.com/food-api) (free tier available) and an OpenAI key from the [OpenAI API keys page](https://platform.openai.com/api-keys). Keys are read at build time into `BuildConfig` (see `app/build.gradle.kts`). If you skip them the app still builds, but recipe search and every AI feature will fail at runtime.
+3. **Add Firebase.** Create a Firebase project, register an Android app with the package name `com.team8.smartfridge`, enable **Email/Password** sign-in and **Firestore**, then download `google-services.json` into `app/`. It is git-ignored. This one is not optional: without it the Gradle build fails.
 4. **Run.** Open the project in Android Studio, let Gradle sync, pick a device or emulator, and press Run. Or from the terminal:
    ```bash
    ./gradlew installDebug
    ```
 
 > Keys that are compiled into an APK can be extracted from it. Use restricted or low-quota keys for anything you share, and never publish an APK built with a key you care about.
+
+## Costs and data
+
+- **Cost:** Spoonacular has a free tier (about 150 points a day). OpenAI is pay-per-use: `gpt-4o-mini` for chat and substitutes, `gpt-4o` for camera scans. Firebase's free plan covers a project this size.
+- **What leaves the device:** recipe and ingredient queries go to Spoonacular. Chat messages go to OpenAI along with your profile context (goals, allergies, diet), and a photo you scan goes to OpenAI for recognition. Account sign-in and your pantry, fitness and water data live in Firebase.
 
 ## Notes and known limits
 
@@ -74,6 +79,8 @@ This repository is a fork of [Hridika356/SmartFridge](https://github.com/Hridika
 
 <details>
 <summary>Original course-submission details (kept for reference)</summary>
+
+_Kept as submitted. The APK link and the test account may no longer work, and the "keys bundled in the APK" note describes that original build, not this repository._
 
 ### Team contact information
 
