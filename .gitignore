@@ -1,0 +1,17 @@
+# Secrets and per-machine config
+local.properties
+google-services.json
+*.jks
+*.keystore
+
+# Gradle / Android Studio
+.gradle/
+build/
+.idea/
+*.iml
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+.DS_Store
