@@ -6,6 +6,36 @@ For anyone who wants to cook from what is already in the fridge while keeping an
 
 > Platform: Android 8.0+ (API 26) · Recommended test device: Pixel 8 emulator, API 35
 
+## Try the demo
+
+<p align="center">
+  <a href="https://github.com/ashzaeen/SmartFridge/releases/latest/download/SmartFridge-demo.apk"><img src="docs/download-button.svg" alt="Download the SmartFridge demo APK" width="440"></a>
+</p>
+
+<p align="center"><sub>Direct download &nbsp;·&nbsp; <code>SmartFridge-demo.apk</code> &nbsp;·&nbsp; 16.7 MB &nbsp;·&nbsp; Android 8.0 or newer</sub></p>
+
+No account, no API keys, no setup. The demo is a self-contained build that runs on built-in sample data, so you can poke around every screen straight away.
+
+1. Open the link above on your Android phone (or download it and copy it across).
+2. Open the file. If Android asks, allow your browser or Files app to **install unknown apps**.
+3. Open **SmartFridge Demo** and sign in with **any email and password**.
+
+**Things to try**
+
+- **Home** has a diary that is already part-filled, with a streak, macros and a water tracker.
+- **Pantry** starts with 16 items. Tap **Find recipes with my ingredients** to see recipes ranked by how little you would need to buy, and **Swap It** for substitutes.
+- **Recipes** has 16 recipes with filters for meal and diet, plus favourites. Open one and try **Log This Meal**, then watch Home and Fitness update.
+- **Scan Groceries** opens the real camera. The demo cannot recognise a photo, so it returns a plausible sample haul instead.
+- **AI Chat** talks to Sprout. Try "what can I cook tonight?", "protein ideas" or "how much water should I drink?".
+
+**Good to know**
+
+- Everything in the demo is sample data held in memory. It resets when the app closes, and nothing leaves your phone.
+- Sprout's answers are pre-written, not generated.
+- It installs as its own app (`com.team8.smartfridge.demo`), so it can sit next to a real build.
+- Android may warn that the app is not from the Play Store. That is expected for a downloaded APK. To check the file, its SHA-256 is `9e7180fe6f7a6ef211b58c11f61d7a0cd4e14ac55449f0b2c11e772055087468`.
+- To build the demo yourself, run `./gradlew assembleDemo`. The real app, with your own Firebase project and API keys, is covered under [Setup](#setup).
+
 ## Features
 
 - **Pantry** - keep a live inventory of what you have; scan items with the camera (GPT-4o Vision).

@@ -4,6 +4,8 @@ A walkthrough of what SmartFridge does, how every screen works, and how the app 
 
 > **About the screenshots.** They were captured from the real app running on an Android 15 emulator, with the three backends replaced by local stand-ins: a fake in-memory account and data store instead of Firebase, and local mock servers instead of Spoonacular and OpenAI. That is why you will see names like "Maya Mock" and "Mock Veggie Omelette". The screens, layouts, and behaviour are the app's own; the data is invented. See [How this guide was verified](#how-this-guide-was-verified) for exactly what was and was not tested.
 
+> **Want to try it yourself?** A self-contained demo build with sample data like this is available to download from the [README](../README.md#try-the-demo).
+
 **Contents**
 
 1. [What SmartFridge is](#1-what-smartfridge-is)
