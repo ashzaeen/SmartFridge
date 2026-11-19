@@ -29,9 +29,23 @@ android {
             "\"${localProps.getProperty("SPOONACULAR_API_KEY", "")}\"")
         buildConfigField("String", "OPENAI_API_KEY",
             "\"${localProps.getProperty("OPENAI_API_KEY", "")}\"")
+
+        // True only in the "demo" build type: sample data, no accounts, no keys, no network.
+        buildConfigField("boolean", "DEMO", "false")
     }
 
     buildTypes {
+        // A self-contained build for trying the app: every screen runs on built-in sample data.
+        // Installs next to a normal build (own application id) and is signed with the debug key.
+        create("demo") {
+            initWith(getByName("debug"))
+            isDebuggable = false
+            applicationIdSuffix = ".demo"
+            versionNameSuffix = "-demo"
+            buildConfigField("boolean", "DEMO", "true")
+            signingConfig = signingConfigs.getByName("debug")
+            matchingFallbacks += listOf("debug")
+        }
         release {
             isMinifyEnabled = true
             isShrinkResources = true

@@ -1,6 +1,8 @@
 # Secrets and per-machine config
 local.properties
 google-services.json
+# the demo build's placeholder (fake values, safe to publish)
+!app/src/demo/google-services.json
 *.jks
 *.keystore
 

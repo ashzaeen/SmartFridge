@@ -1,6 +1,7 @@
 package com.team8.smartfridge.network
 
 import com.team8.smartfridge.BuildConfig
+import com.team8.smartfridge.demo.DemoData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.MediaType.Companion.toMediaType
@@ -49,6 +50,10 @@ object OpenAIClient {
      * the next assistant reply. Use gpt-4o-mini for cost efficiency.
      */
     suspend fun chat(messages: List<Message>): String = withContext(Dispatchers.IO) {
+        if (BuildConfig.DEMO) {
+            kotlinx.coroutines.delay(700)
+            return@withContext DemoData.chatReply(messages.lastOrNull { it.role == "user" }?.content.orEmpty())
+        }
         try {
             val messagesJson = JSONArray().apply {
                 messages.forEach { msg ->
@@ -90,6 +95,10 @@ object OpenAIClient {
      * list the food/grocery items visible. Returns a cleaned list of item names.
      */
     suspend fun analyzeImageForFood(jpegBase64: String): List<String> = withContext(Dispatchers.IO) {
+        if (BuildConfig.DEMO) {
+            kotlinx.coroutines.delay(900)
+            return@withContext DemoData.nextScan()
+        }
         try {
             val imageUrl = "data:image/jpeg;base64,$jpegBase64"
 
@@ -174,6 +183,7 @@ object OpenAIClient {
     suspend fun getIngredientSubstitutes(ingredients: List<String>): Map<String, List<String>> =
         withContext(Dispatchers.IO) {
             if (ingredients.isEmpty()) return@withContext emptyMap()
+            if (BuildConfig.DEMO) return@withContext ingredients.associate { it.lowercase() to DemoData.substitutesFor(it) }
             try {
                 val list = ingredients.joinToString(", ")
                 val prompt = """

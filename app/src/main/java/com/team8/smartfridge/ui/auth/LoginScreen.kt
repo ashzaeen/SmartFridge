@@ -37,6 +37,7 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
 import kotlinx.coroutines.delay
 import androidx.compose.material3.Text
+import com.team8.smartfridge.BuildConfig
 import com.team8.smartfridge.ui.theme.PlayfairFontFamily
 import com.team8.smartfridge.ui.theme.SyneFontFamily
 
@@ -650,6 +651,22 @@ fun LoginScreen(
                             interactionSource = remember { MutableInteractionSource() },
                             indication = null
                         ) { onRegisterClick() }
+                    )
+                }
+
+                if (BuildConfig.DEMO) {
+                    Spacer(Modifier.height(22.dp))
+                    Text(
+                        "DEMO BUILD  \u00B7  sign in with any email and password",
+                        style = TextStyle(
+                            fontFamily    = SyneFontFamily,
+                            fontWeight    = FontWeight.Bold,
+                            fontSize      = 11.sp,
+                            letterSpacing = 1.sp,
+                            color         = LLite.copy(alpha = 0.85f),
+                            textAlign     = androidx.compose.ui.text.style.TextAlign.Center
+                        ),
+                        modifier = Modifier.fillMaxWidth()
                     )
                 }
             }
